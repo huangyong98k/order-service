@@ -50,6 +50,15 @@ public class OrderServiceImpl implements OrdersService{
         return new CommonResp(CommonRespCode.SUCCESS);
     }
 
+    @Override
+    public Integer findOrderStatus(String orderNo) {
+        Orders orders = ordersDao.findOrdersByOrderNo(orderNo);
+        if (orders == null){
+            return -1;
+        }
+        return orders.getStatus();
+    }
+
     static Orders transferToOrders(OrdersReq ordersReq){
         Orders o = new Orders();
         o.setMemberNo(ordersReq.getMemberNo());

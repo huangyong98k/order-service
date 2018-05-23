@@ -31,7 +31,7 @@ public class LogisticsController {
     @ApiOperation(value ="更新物流信息" )
     @GetMapping("/update")
     public CommonResp update(@RequestParam("logisticsNo") String logisticsNo,
-                           @RequestParam("logisticsNo") String nowAddress,
+                           @RequestParam("nowAddress") String nowAddress,
                            HttpServletRequest request){
         log.info("recevie msg:{}  {}",logisticsNo,nowAddress);
         return logisticsService.updateLogistics(logisticsNo,nowAddress);

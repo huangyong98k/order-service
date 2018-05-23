@@ -22,4 +22,8 @@ public interface OrdersService {
      * 更新状态
      */
     CommonResp updateStatus(String orderNo, Integer status);
+    /**
+     * 查看订单状态
+     */
+    Integer findOrderStatus(String orderNo);
 }

@@ -43,4 +43,10 @@ public class OrdersController {
         log.info("recevie msg:{}",orderNo);
         return ordersService.updateStatus(orderNo,status);
     }
+    @ApiOperation(value ="查看订单状态" )
+    @GetMapping("/status")
+    public Integer getOrderStatus(@RequestParam("orderNo") String orderNo){
+        log.info("recevie msg:{}",orderNo);
+        return ordersService.findOrderStatus(orderNo);
+    }
 }
